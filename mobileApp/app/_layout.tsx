@@ -3,6 +3,7 @@ import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as NavigationBar from "expo-navigation-bar";
 import { ThemeProvider, useTheme } from "../context/ThemeContext";
+import { UnitsProvider } from "../context/UnitsContext";
 
 function ThemedSystemBars() {
   const { colorScheme } = useTheme();
@@ -23,8 +24,10 @@ function ThemedSystemBars() {
 export default function RootLayout() {
   return (
     <ThemeProvider>
-      <ThemedSystemBars />
-      <Slot />
+      <UnitsProvider>
+        <ThemedSystemBars />
+        <Slot />
+      </UnitsProvider>
     </ThemeProvider>
   );
 }
