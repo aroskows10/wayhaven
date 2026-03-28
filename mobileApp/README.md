@@ -10,10 +10,24 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+2. Create a `.env` file in the project root
 
    ```bash
-   npx expo start
+   echo "EXPO_PUBLIC_MAPBOX_TOKEN=pk.eyJ1IjoiYXJvc2tvd3NraSIsImEiOiJjbWxidGdxaWMwbDBpM2RxMmE4cWZwemszIn0.-_B2ws8d6EHQmntsInt5FQ" > .env
+   ```
+
+3. Build and run (first time requires a native build)
+
+   ```bash
+   npx expo run:ios
+   # or
+   npx expo run:android
+   ```
+
+4. For subsequent launches (JS-only changes)
+
+   ```bash
+   npx expo start --dev-client
    ```
 
 In the output, you'll find options to open the app in a
